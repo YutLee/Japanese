@@ -46,12 +46,12 @@ module.exports = {
     hot: true,
     host: '0.0.0.0',
     port: 5000,
-    // proxy: {
-    //   '/api': {
-    //     target: 'http://localhost:4002',
-    //     changeOrigin: true
-    //   }
-    // }
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5001',
+        changeOrigin: true
+      }
+    }
   },
   module: {
     rules: [

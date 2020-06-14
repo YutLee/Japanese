@@ -1,10 +1,9 @@
-import {
-  serialize
-} from './utils'
-import md5 from 'md5'
+// import {
+//   serialize
+// } from './utils'
+// import md5 from 'md5'
 
-
-export const fetch = async (url = '', options = {}, errorCode) => {
+export const fetch = async (url = '', options = {}) => {
   const newUrl = /\?/.test(url) ? `${url}${/(&|\?)$/.test(url) ? '' : '&'}_t=${Date.now()}` : `${url}?_t=${Date.now()}`
   const headers = {'Content-Type': 'application/json'}
 
@@ -23,4 +22,14 @@ export const fetch = async (url = '', options = {}, errorCode) => {
  */
 export const getWords = () => (
   fetch('/api/words')
+)
+
+/**
+ * 添加单词
+ */
+export const addWord = ({ name }) => (
+  fetch('/api/words', {
+    method: 'post',
+    body: JSON.stringify({ name })
+  })
 )
