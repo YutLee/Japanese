@@ -1,0 +1,286 @@
+[class^="icon-"], [class*=" icon-"] {
+  line-height: inherit;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#app, textarea, input {
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "SF UI Text", "Helvetica Neue", Arial, "WenQuanYi Zen Hei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+html {
+  height: 100%;
+  color: #666;
+  background-color: #f5f5f5;
+}
+
+body {
+  margin: 0;
+
+  &.full-screen {
+    height: 100%;
+
+    #app {
+      height: 100%;
+    }
+
+    [class^="page-"], [class*=" page-"] {
+      height: 100%;
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+
+      .m-nothing {
+        -webkit-box-flex: 1;
+        flex: 1;
+        display: block;
+        width: 100%; /* 荣耀V8aAndroid8.0 需要设置宽度100%才行*/
+        /*max-width: 100%;
+        flex-basis: 0;
+        min-width: 0;*/
+      }
+    }
+  }
+}
+
+div, p, span, strong, a, ul, ol, li, i, img, h2, h3, h4, h5, input, textarea {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+* {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+table {
+  background-color: #fff;
+  /*text-align: center;*/
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  /*border: 1px solid #e5e5e5;*/
+}
+
+.c-btn {
+  color: #fff;
+  box-sizing: border-box;
+  width: 86px;
+  height: 36px;
+  padding: 0;
+  background-color: #ff9d00;
+  font-size: 13px;
+  padding: 0 8px;
+  text-align: center;
+  line-height: 36px;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #ffb205, #fc7636);
+}
+
+.fix {
+  zoom: 1;
+
+  &:after {
+    display: block;
+    content: '';
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+.fl-l { float: left; }
+
+.fl-r { float: right; }
+
+.flex {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+
+  .cell {
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: block;
+    max-width: 100%;
+    flex-basis: 0;
+    min-width: 0; /* 必须加上min-width:0; 不然cell里如果使用了elis，则会溢出 */
+  }
+
+  &.column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+
+  &.item-c {
+    -webkit-box-align: center;
+    align-items: center;
+  }
+
+  &.jcc {
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+
+  &.jcsb {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.rtl {
+  direction: rtl;
+  text-align: left;
+}
+
+.bidi {
+  unicode-bidi: bidi-override;
+}
+
+.elis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 多行省略号 */
+.multi-elis {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+.hairline {
+  border: 1Px solid #e5e5e5;
+}
+
+.hairline-top {
+  border-top: 1Px solid #e5e5e5;
+}
+
+.hairline-bottom {
+  border-bottom: 1Px solid #e5e5e5;
+}
+
+.hairline-left {
+  border-left: 1Px solid #e5e5e5;
+}
+
+.hairline-right {
+  border-right: 1Px solid #e5e5e5;
+}
+
+.hairlines {
+  .hairline {
+    border: .5Px solid #e5e5e5;
+  }
+
+  .hairline-top {
+    border-top: .5Px solid #e5e5e5;
+  }
+
+  .hairline-bottom {
+    border-bottom: .5Px solid #e5e5e5;
+  }
+
+  .hairline-left {
+    border-left: .5Px solid #e5e5e5;
+  }
+
+  .hairline-right {
+    border-right: .5Px solid #e5e5e5;
+  }
+}
+
+.attr-tag {
+  display: inline-block;
+  line-height: 18px;
+  color: #999;
+  background-color: #e5e5e5;
+  border-radius: 9px;
+  padding: 0 8px;
+  font-size: 11px;
+
+  &.error {
+    background-color: #ffe5e5;
+    color: #f00;
+  }
+}
+
+.nav-bar-title {
+  height: 44px;
+  line-height: 44px;
+  border-bottom-color: #d4d1cf;
+  background-color: #fff;
+
+  .title {
+    text-align: center;
+    font-size: 18px;
+    color: #343434;
+    padding-right: 44px;
+  }
+
+  .icon-arrow {
+    font-size: 18px;
+    color: #999;
+    width: 44px;
+    text-align: center;
+  }
+}
+
+.v-middle {
+  text-align: center;
+
+  .v-middle-content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.p-scroll-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
