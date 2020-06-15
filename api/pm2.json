@@ -1,19 +1,19 @@
 {
   "apps": [
     {
-      "name": "wx.yos168.com",
+      "name": "janpense",
       "script": "./src/app.js",
       "instances": 1,
-      "max_memory_restart": "4G",
+      "max_memory_restart": "1G",
       "exec_mode": "cluster_mode",
       "env_production": {
-        "PORT": 3300,
+        "PORT": 5002,
         "NODE_ENV": "production"
       },
       "merge_logs" : true,
       "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
-      "error_file": "logs/wx.yos168.com.error.log",
-      "out_file": "logs/wx.yos168.com.out.log"
+      "error_file": "logs/janpense.error.log",
+      "out_file": "logs/janpense.out.log"
     }
   ]
 }

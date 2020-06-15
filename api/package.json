@@ -6,9 +6,9 @@
     "log": "pm2 install pm2-logrotate && pm2 set pm2-logrotate:compress true",
     "start": "supervisor ./src/app.js",
     "service": "node ./src/app.js",
-    "beta:stop": "pm2 stop pm2.beta.json --env beta",
-    "beta:start": "pm2 start pm2.beta.json --env beta",
-    "beta": "npm run beta:stop && npm run beta:start"
+    "build:stop": "pm2 stop pm2.json --env production",
+    "build:start": "pm2 start pm2.json --env production",
+    "build": "npm run build:stop && npm run build:start"
   },
   "license": "MIT",
   "dependencies": {
