@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const isEnvProduction = NODE_ENV !== 'development';
-const outputPath = '../dist/' + NODE_ENV;
+const outputPath = '../dist';
 
 const env = {
   // 'process.env.NODE_ENV': JSON.stringify('production'),
