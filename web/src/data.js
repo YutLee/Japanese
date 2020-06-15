@@ -18,6 +18,13 @@ export const fetch = async (url = '', options = {}) => {
 }
 
 /**
+ * 搜索单词
+ */
+export const getWordsByKeyword = ({ keyword }) => (
+  fetch('/api/search?keyword=' + keyword)
+)
+
+/**
  * 获取单词列表
  */
 export const getWords = () => (
@@ -27,9 +34,9 @@ export const getWords = () => (
 /**
  * 添加单词
  */
-export const addWord = ({ name }) => (
+export const addWord = (params) => (
   fetch('/api/words', {
     method: 'post',
-    body: JSON.stringify({ name })
+    body: JSON.stringify(params)
   })
 )

@@ -8,6 +8,7 @@ const router = new Router({
 })
 
 
+router.get('/search', require('./routes/words/search'))
 router.get('/words', require('./routes/words/list'))
 router.post('/words', require('./routes/words/add'))
 

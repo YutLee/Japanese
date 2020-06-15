@@ -1,48 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useService from '../hook/service'
-import { getWords, addWord } from '../data'
+import { getWordsByKeyword } from '../data'
 import './home.css'
 
 export default function Home() {
-  const [word, setWord] = useState('')
-  const [words, setWords] = useState([])
-  const [addWordParams, setAddWordParams] = useState(null)
-  // const wordsData = useService(getWords)
-  const addWordsData = useService(addWord, addWordParams)
+  const [keyword, setKeyword] = useState('')
+  const [keywordParams, setKeywordParams] = useState(null)
+  // const [words, setWords] = useState([])
+  const { words } = useService(getWordsByKeyword, keywordParams)
 
   const handleChange = (event) => {
-    setWord((event.target.value || '').trim())
+    setKeyword((event.target.value || '').trim())
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setAddWordParams({ name: word, now: Date.now() })
+    setKeywordParams({ keyword, now: Date.now() })
   }
 
   // useEffect(() => {
-  //   const { code, words } = wordsData
+  //   const { words, code, msg } = wordsData
 
   //   if (code !== undefined) {
   //     if (code === 200) {
-  //       setWords(words)
+  //       setWords(prevState => {
+  //         return prevState.concat([{name: word}])
+  //       })
+  //     } else {
+  //       alert(msg)
   //     }
   //   }
   // }, [wordsData])
-
-  useEffect(() => {
-    const { code, msg } = addWordsData
-
-    if (code !== undefined) {
-      if (code === 200) {
-        setWords(prevState => {
-          return prevState.concat([{name: word}])
-        })
-      } else {
-        alert(msg)
-      }
-    }
-  }, [addWordsData])
 
   return (
     <div className="home-page">
@@ -50,13 +39,13 @@ export default function Home() {
         <input type="text" onChange={handleChange} />
         <button type="submit">搜索</button>
       </form>
-      {/* <ul>
+      <ul>
         {
           (words || []).map((item, idx) => (
-            <li key={idx}>{item.name}</li>
+            <li key={idx}>{item.name}&ensp;|&ensp;{item.excerpt}</li>
           ))
         }
-      </ul> */}
+      </ul>
       <Link to="/add" className="add">+</Link>
     </div>
   )

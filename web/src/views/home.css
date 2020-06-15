@@ -14,4 +14,9 @@
     text-align: center;
     line-height: 37px;
   }
+
+  li {
+    font-size: 16px;
+    margin: 10px;
+  }
 }
