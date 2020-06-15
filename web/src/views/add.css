@@ -1,0 +1,21 @@
+.add-page {
+  padding: 10px;
+
+  .item {
+    margin: 10px 0;
+
+    .label {
+      width: 50px;
+      text-align: right;
+      display: inline-block;
+      line-height: 40px;
+      padding-right: 10px;
+    }
+  }
+
+  button {
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+  }
+}

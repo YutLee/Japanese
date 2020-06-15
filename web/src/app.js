@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Bundle from './bundle'
 import loadHome from 'bundle-loader?lazy!./views/home'
+import loadAdd from 'bundle-loader?lazy!./views/add'
 import './app.css'
 
 //lazy load chunks
@@ -21,6 +22,10 @@ const route = [
   {
     path: '/',
     component: bundle(loadHome)
+  },
+  {
+    path: '/add',
+    component: bundle(loadAdd)
   }
 ]
 

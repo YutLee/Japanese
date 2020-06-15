@@ -16,11 +16,10 @@ const addOne = ({
   accent = '',
   romaji = '',
   spell = '',
-  example = '',
   label = ''
 }) => poolQuery(`
-  INSERT INTO words (name, excerpt, pron, accent, romaji, spell, example, label)
-  VALUES ('${name}', '${excerpt}', '${pron}', '${accent}', '${romaji}', '${spell}', '${example}', '${label}')
+  INSERT INTO words (name, excerpt, pron, accent, romaji, spell, label)
+  VALUES ('${name}', '${excerpt}', '${pron}', '${accent}', '${romaji}', '${spell}', '${label}')
 `)
 
 module.exports = {
